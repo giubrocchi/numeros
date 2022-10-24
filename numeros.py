@@ -43,7 +43,7 @@ for name in file_names:
 
 net = MLPClassifier(activation='logistic', solver='lbfgs', max_iter=10000000, hidden_layer_sizes=(50,10))
 
-for i in range(0, 1000):
+for i in range(0, 10):
   net.fit(numbers, expected_numbers)
 
 tests = ['./Numeros/1-teste.pgm', './Numeros/2-teste.pgm',
