@@ -43,14 +43,26 @@ for name in file_names:
 
 net = MLPClassifier(activation='logistic', solver='lbfgs', max_iter=10000000, hidden_layer_sizes=(50,10))
 
-for i in range(0, 10):
-  net.fit(numbers, expected_numbers)
+net.fit(numbers, expected_numbers)
+
+tests = ['./Numeros/1.pgm', './Numeros/2.pgm',
+        './Numeros/3.pgm', './Numeros/4.pgm',
+        './Numeros/5.pgm', './Numeros/6.pgm',
+        './Numeros/7.pgm', './Numeros/8.pgm',
+        './Numeros/9.pgm', './Numeros/0.pgm']
+
+print('Same numbers:')
+
+for test in tests:
+  print(net.predict([open_file(test)]))
 
 tests = ['./Numeros/1-teste.pgm', './Numeros/2-teste.pgm',
         './Numeros/3-teste.pgm', './Numeros/4-teste.pgm',
         './Numeros/5-teste.pgm', './Numeros/6-teste.pgm',
         './Numeros/7-teste.pgm', './Numeros/8-teste.pgm',
         './Numeros/9-teste.pgm', './Numeros/0-teste.pgm']
+
+print('\nTest numbers:')
 
 for test in tests:
   print(net.predict([open_file(test)]))
